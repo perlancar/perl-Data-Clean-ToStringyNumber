@@ -4,6 +4,8 @@ use 5.010001;
 use strict;
 use warnings;
 
+# VERSION
+
 use parent qw(Data::Clean::Base);
 
 sub command_replace_with_stringy_number {
