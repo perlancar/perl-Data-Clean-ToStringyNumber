@@ -9,10 +9,10 @@ use warnings;
 use parent qw(Data::Clean::Base);
 
 sub command_replace_with_stringy_number {
-    require Scalar::Util;
+    require Scalar::Util::LooksLikeNumber;
 
     my ($self, $args) = @_;
-    return '{{var}} = defined({{var}}) && Scalar::Util::looks_like_number({{var}}) > 36 ? "{{var}}" : {{var}}';
+    return '{{var}} = defined({{var}}) && Scalar::Util::LooksLikeNumber::looks_like_number({{var}}) > 36 ? "{{var}}" : {{var}}';
 }
 
 sub new {

@@ -9,10 +9,10 @@ use warnings;
 use parent qw(Data::Clean::Base);
 
 sub command_replace_with_non_stringy_number {
-    require Scalar::Util;
+    require Scalar::Util::LooksLikeNumber;
 
     my ($self, $args) = @_;
-    return '{{var}} = Scalar::Util::looks_like_number({{var}}) =~ /\\A(?:1|5|9|13)\\z/ ? {{var}}+0 : {{var}}';
+    return '{{var}} = Scalar::Util::LooksLikeNumber::looks_like_number({{var}}) =~ /\\A(?:1|5|9|13)\\z/ ? {{var}}+0 : {{var}}';
 }
 
 sub new {
