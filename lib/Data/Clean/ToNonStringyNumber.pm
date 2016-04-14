@@ -1,12 +1,13 @@
 package Data::Clean::ToNonStringyNumber;
 
+# DATE
+# VERSION
+
 use 5.010001;
 use strict;
 use warnings;
 
-# VERSION
-
-use parent qw(Data::Clean::Base);
+use parent qw(Data::Clean);
 
 sub command_replace_with_non_stringy_number {
     require Scalar::Util::LooksLikeNumber;
