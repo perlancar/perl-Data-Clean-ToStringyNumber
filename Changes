@@ -1,5 +1,12 @@
 Revision history for Data-Clean-ToStringyNumber
 
+0.04     2016-04-14 (SHARYANTO)
+
+         - No functional changes.
+
+         - Re-base on Data::Clean.
+
+
 0.03     2014-06-30 (SHARYANTO)
 
          - Workaround for Scalar::Util 1.39 change to looks_like_number()
