@@ -1,3 +1,9 @@
+0.050   2019-09-01  Released-By: PERLANCAR; Urgency: medium
+
+	- [ux] Warn when user calls new() without customizing option;
+	  recommend her to use get_cleanser() instead.
+
+
 0.04     2016-04-14  Released-By: SHARYANTO
 
          - No functional changes.
