@@ -8,6 +8,7 @@ use strict;
 use warnings;
 
 use parent qw(Data::Clean);
+use vars qw($creating_singleton);
 
 sub command_replace_with_stringy_number {
     require Scalar::Util::LooksLikeNumber;
@@ -18,12 +19,19 @@ sub command_replace_with_stringy_number {
 
 sub new {
     my ($class, %opts) = @_;
+
+    if (!%opts && !$creating_singleton) {
+        warn "You are creating a new ".__PACKAGE__." object without customizing options. ".
+            "You probably want to call get_cleanser() yet to get a singleton instead?";
+    }
+
     $opts{""} //= ['replace_with_stringy_number'];
     $class->SUPER::new(%opts);
 }
 
 sub get_cleanser {
     my $class = shift;
+    local $creating_singleton = 1;
     state $singleton = $class->new;
     $singleton;
 }
